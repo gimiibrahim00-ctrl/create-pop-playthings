@@ -1,0 +1,73 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.146'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = "create-pop-playthings-${mod_version}+mc${minecraft_version}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    maven { url = 'https://www.cursemaven.com' }
+}
+
+neoForge {
+    version = project.neo_version
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+    runs {
+        client { client() }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        gameTestServer {
+            type = 'gameTestServer'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        configureEach {
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+    mods {
+        "${mod_id}" { sourceSet(sourceSets.main) }
+    }
+}
+
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+dependencies {
+    implementation "curse.maven:create-328085:7963363"
+    implementation "curse.maven:just-create-smp-pops-1580970:8358497"
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+tasks.named('jar', Jar) {
+    manifest {
+        attributes([
+                'Specification-Title'   : mod_name,
+                'Specification-Version' : mod_version,
+                'Implementation-Title'  : project.name,
+                'Implementation-Version': mod_version
+        ])
+    }
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
