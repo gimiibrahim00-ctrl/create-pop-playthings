@@ -1,0 +1,8 @@
+/upload/
+/.superpowers/
+/.gradle/
+/build/
+/run/
+*.log
+/libs/*.jar
+
