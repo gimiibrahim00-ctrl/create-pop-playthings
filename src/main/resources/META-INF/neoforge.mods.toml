@@ -8,6 +8,8 @@ version="${file.jarVersion}"
 displayName="Create: Pop Playthings"
 authors="Jimii"
 description='''Interactive Create-crafted toys and activities for Just Create SMP Pops.'''
+[[mixins]]
+config="create_pop_playthings.mixins.json"
 
 [[dependencies.create_pop_playthings]]
 modId="neoforge"
