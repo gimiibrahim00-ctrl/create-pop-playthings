@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "assembly=correct,facing=north": {"model":"create_pop_playthings:block/wind_up_robot"},
+    "assembly=correct,facing=east": {"model":"create_pop_playthings:block/wind_up_robot","y":90},
+    "assembly=correct,facing=south": {"model":"create_pop_playthings:block/wind_up_robot","y":180},
+    "assembly=correct,facing=west": {"model":"create_pop_playthings:block/wind_up_robot","y":270},
+    "assembly=incorrect,facing=north": {"model":"create_pop_playthings:block/wind_up_robot_incorrect"},
+    "assembly=incorrect,facing=east": {"model":"create_pop_playthings:block/wind_up_robot_incorrect","y":90},
+    "assembly=incorrect,facing=south": {"model":"create_pop_playthings:block/wind_up_robot_incorrect","y":180},
+    "assembly=incorrect,facing=west": {"model":"create_pop_playthings:block/wind_up_robot_incorrect","y":270},
+    "assembly=parts,facing=north": {"model":"create_pop_playthings:block/wind_up_robot_parts"},
+    "assembly=parts,facing=east": {"model":"create_pop_playthings:block/wind_up_robot_parts","y":90},
+    "assembly=parts,facing=south": {"model":"create_pop_playthings:block/wind_up_robot_parts","y":180},
+    "assembly=parts,facing=west": {"model":"create_pop_playthings:block/wind_up_robot_parts","y":270}
+  }
+}
