@@ -1,0 +1,1 @@
+{"type":"create:mechanical_crafting","accept_mirrored":false,"pattern":[" III ","IIIII","I C I","ICHCI","I C I"," I I ","II II"],"key":{"I":{"item":"create:iron_sheet"},"C":{"item":"create:cogwheel"},"H":{"item":"create:hand_crank"}},"result":{"id":"create_pop_playthings:wind_up_robot","count":1}}
