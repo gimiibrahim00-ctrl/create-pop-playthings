@@ -1,0 +1,1 @@
+{"parent":"create_pop_playthings:block/sandpit","elements":[{"from":[3,3,5],"to":[13,7,11],"faces":{"north":{"texture":"#sand"},"south":{"texture":"#sand"},"east":{"texture":"#sand"},"west":{"texture":"#sand"},"up":{"texture":"#sand"},"down":{"texture":"#sand"}}}]}
