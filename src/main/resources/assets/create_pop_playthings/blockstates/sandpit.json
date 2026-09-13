@@ -1,0 +1,1 @@
+{"variants":{"creation=empty":{"model":"create_pop_playthings:block/sandpit"},"creation=sandcastle":{"model":"create_pop_playthings:block/sandpit_sandcastle"},"creation=piles":{"model":"create_pop_playthings:block/sandpit_piles"},"creation=tunnel":{"model":"create_pop_playthings:block/sandpit_tunnel"},"creation=road":{"model":"create_pop_playthings:block/sandpit_road"}}}
