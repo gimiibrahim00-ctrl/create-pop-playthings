@@ -19,6 +19,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.ItemInteractionResult;
 
 public final class WindUpRobotBlock extends PopToyBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -46,10 +47,10 @@ public final class WindUpRobotBlock extends PopToyBlock {
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
-    @Override protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    @Override protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (state.getValue(ASSEMBLY) == RobotAssembly.INCORRECT && net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem()).toString().equals("create:wrench")) {
             if (!level.isClientSide) level.setBlock(pos, state.setValue(ASSEMBLY, RobotAssembly.CORRECT), 3);
-            return InteractionResult.sidedSuccess(level.isClientSide);
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
         return super.useItemOn(stack, state, level, pos, player, hand, hit);
     }
