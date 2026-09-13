@@ -39,7 +39,7 @@ public final class WindUpRobotEntity extends PathfinderMob {
         else spawnAtLocation(ModItems.WIND_UP_ROBOT.get());
         discard();
     }
-    @Override protected void addAdditionalSaveData(CompoundTag tag) { super.addAdditionalSaveData(tag); tag.putLong("Home", home.asLong()); tag.putString("Facing", facing.getName()); }
-    @Override protected void readAdditionalSaveData(CompoundTag tag) { super.readAdditionalSaveData(tag); home = BlockPos.of(tag.getLong("Home")); facing = Direction.byName(tag.getString("Facing")); if (facing == null) facing = Direction.NORTH; }
+    @Override public void addAdditionalSaveData(CompoundTag tag) { super.addAdditionalSaveData(tag); tag.putLong("Home", home.asLong()); tag.putString("Facing", facing.getName()); }
+    @Override public void readAdditionalSaveData(CompoundTag tag) { super.readAdditionalSaveData(tag); home = BlockPos.of(tag.getLong("Home")); facing = Direction.byName(tag.getString("Facing")); if (facing == null) facing = Direction.NORTH; }
     @Override public boolean canChangeDimensions(Level from, Level to) { return false; }
 }
