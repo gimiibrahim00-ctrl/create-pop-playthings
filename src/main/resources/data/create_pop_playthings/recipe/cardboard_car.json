@@ -1,0 +1,1 @@
+{"type":"create:mechanical_crafting","accept_mirrored":false,"pattern":[" CCC ","CCCCC","C C C"],"key":{"C":{"item":"create:cardboard"}},"result":{"id":"create_pop_playthings:cardboard_car","count":1}}
